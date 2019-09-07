@@ -1,9 +1,10 @@
 {
-  "name": "vue-record",
+  "name": "@codekraft-studio/vue-record",
   "version": "0.0.1",
-  "main": "dist/VueRecord.common.js",
+  "main": "dist/VueRecord.umd.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "prepublishOnly": "npm run build",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --target lib --name VueRecord src/components/index.js",
     "build:demo": "vue-cli-service build --dest demo",
     "publish:demo": "git subtree push --prefix demo origin gh-pages",
@@ -11,6 +12,9 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "vue": "^2.5.17"
   },
@@ -43,5 +47,8 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

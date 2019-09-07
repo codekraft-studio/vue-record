@@ -2,13 +2,16 @@
 
 > custom components for MediaRecorder API
 
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+Checkout the [demo](https://codekraft-studio.github.io/vue-record/) to see it in action.
+
 ## Installation
 
 Download the project using your favourite package manager:
 
 ```
 npm install @codekraft-studio/vue-record
-yarn add @codekraft-studio/vue-record
 ```
 
 Load it inside your project and use it:
@@ -88,46 +91,17 @@ export default {
 }
 ```
 
+---
+
+## License
+
+[MIT](./LICENSE) © [codekraft-studio](https://github.com/codekraft-studio)
 
 
-## Project setup
+[npm-image]: https://badge.fury.io/js/%40codekraft-studio%2Fvue-record.svg
 
-```
-yarn install
-```
+[npm-url]: https://npmjs.org/package/@codekraft-studio/vue-record
 
-### Compiles and hot-reloads for development
+[daviddm-image]: https://david-dm.org/codekraft-studio/vue-record.svg?theme=shields.io
 
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-
-```
-yarn run build
-```
-
-### Run your tests
-
-```
-yarn run test
-```
-
-### Lints and fixes files
-
-```
-yarn run lint
-```
-
-### Run your end-to-end tests
-
-```
-yarn run test:e2e
-```
-
-### Run your unit tests
-
-```
-yarn run test:unit
-```
+[daviddm-url]: https://david-dm.org/codekraft-studio/vue-record
