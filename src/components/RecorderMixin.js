@@ -19,6 +19,8 @@ export default {
         this.prepareRecorder()
         this.$_mediaRecorder.start()
       } catch (e) {
+        this.$emit('error', e)
+        // eslint-disable-next-line
         console.error(e);
       }
     },
@@ -66,15 +68,18 @@ export default {
       this.$_mediaRecorder.addEventListener('start', () => {
         this.isRecording = true
         this.isPaused = false
+        this.$emit('start')
       })
 
       this.$_mediaRecorder.addEventListener('resume', () => {
         this.isRecording = true
         this.isPaused = false
+        this.$emit('resume')
       })
 
       this.$_mediaRecorder.addEventListener('pause', () => {
         this.isPaused = true
+        this.$emit('pause')
       })
 
       // Collect the available data into chunks
@@ -87,6 +92,8 @@ export default {
       // On recording stop get the data and emit the result
       // than clear all the recording chunks
       this.$_mediaRecorder.addEventListener('stop', () => {
+        this.$emit('stop')
+
         const blobData = new Blob(this.chunks)
         if (blobData.size > 0) {
           this.$emit('result', blobData)
