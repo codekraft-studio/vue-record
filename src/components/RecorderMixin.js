@@ -106,6 +106,7 @@ export default {
   },
   mounted () {
     if (!navigator.mediaDevices && !navigator.mediaDevices.getUserMedia) {
+      // eslint-disable-next-line
       console.warn('Media Devices are not supported from your browser.')
       return
     }

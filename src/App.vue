@@ -19,15 +19,15 @@
           <div class="column">
             <div class="has-text-right">
               <h3 class="title is-3">Recording audio files</h3>
-              <p class="subtitle">Simply <strong>{{recordMode}}</strong> the button to record an audio clip</p>
+              <p class="subtitle">Simply <strong>{{recordMode.audio}}</strong> the button to record an audio clip</p>
             </div>
 
             <div class="record-settings">
-              <vue-record-audio :mode="recordMode" @stream="onStream" @result="onResult" />
+              <vue-record-audio :mode="recordMode.audio" @stream="onStream" @result="onResult" />
               <div class="field">
                 <label class="label">Mode</label>
                 <div class="select">
-                  <select v-model="recordMode">
+                  <select v-model="recordMode.audio">
                     <option value="press">Press</option>
                     <option value="hold">Hold</option>
                   </select>
@@ -46,20 +46,20 @@
         </div>
       </section>
 
-      <!-- <section id="example-video">
+      <section id="example-video">
         <div class="columns">
           <div class="column">
             <div class="has-text-right">
               <h3 class="title is-3">Recording video files</h3>
-              <p class="subtitle">Simply <strong>{{recordMode}}</strong> the button to record an audio clip</p>
+              <p class="subtitle">Simply <strong>{{recordMode.video}}</strong> the button to record a video clip</p>
             </div>
 
             <div class="record-settings">
-              <vue-record-video mode="press" :audio="false" @stream="onVideoStream" @result="onVideoResult" />
+              <vue-record-video mode="press" @stream="onVideoStream" @result="onVideoResult" />
               <div class="field">
                 <label class="label">Mode</label>
                 <div class="select">
-                  <select v-model="recordMode">
+                  <select v-model="recordMode.video">
                     <option value="press">Press</option>
                     <option value="hold">Hold</option>
                   </select>
@@ -73,7 +73,7 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
     </main>
 
     <footer class="footer">
@@ -92,7 +92,10 @@ export default {
   name: 'app',
   data () {
     return {
-      recordMode: 'press',
+      recordMode: {
+        audio: 'hold',
+        video: 'press'
+      },
       recordings: []
     }
   },
@@ -105,8 +108,6 @@ export default {
     },
     onVideoStream (stream) {
       console.log('Got a video stream object:', stream);
-      this.$refs.Video.srcObject = stream
-      this.$refs.Video.play()
     },
     onVideoResult (data) {
       this.$refs.Video.srcObject = null
