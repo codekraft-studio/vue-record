@@ -1,6 +1,6 @@
 {
   "name": "@codekraft-studio/vue-record",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/VueRecord.umd.js",
   "scripts": {
     "prepublishOnly": "npm run build",
