@@ -1,21 +1,21 @@
 <template lang="html">
-  <div v-if="isSupported" class="vue-video-recorder" :class="{
-    'active': isRecording,
-    'paused': isPaused
-  }">
-    <div class="recorder-icon"
-      @mousedown="startRecording"
-      @mouseleave="stopRecording"
-      @mouseup="stopRecording"
-      @touchstart="startRecording"
-      @touchend="stopRecording"
-      @touchcancel="stopRecording">
-      <span>&#9658;</span>
-    </div>
-    <div v-if="hasControls" class="recorder-controls">
-      <button @click="pause">PAUSE</button>
-      <button @click="resume">RESUME</button>
-      <button @click="stop">STOP</button>
+  <div
+    v-if="isSupported"
+    class="vue-video-recorder"
+    :class="{
+      'active': isRecording,
+      'paused': isPaused
+    }"
+    @mousedown="startRecording"
+    @mouseleave="stopRecording"
+    @mouseup="stopRecording"
+    @touchstart="startRecording"
+    @touchend="stopRecording"
+    @touchcancel="stopRecording"
+  >
+    <div class="recorder-icon">
+      <span v-if="isRecording">STOP</span>
+      <span v-else>START</span>
     </div>
   </div>
 </template>
@@ -43,9 +43,8 @@ export default {
       type: Boolean,
       default: true
     },
-    controls: {
-      type: Boolean,
-      default: false
+    mode: {
+      default: 'press'
     }
   },
   computed: {
@@ -54,9 +53,6 @@ export default {
         video: true,
         audio: this.audio
       }
-    },
-    hasControls () {
-      return this.controls && this.mode === 'press' && this.isRecording
     }
   }
 }
@@ -65,15 +61,23 @@ export default {
 <style lang="scss">
 .vue-video-recorder {
   color: white;
-  padding: 16px;
   border-radius: 18px;
   position: relative;
-  background-color: #4DB6AC;
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  display: inline-block;
+  display: flex;
   font-size: 16px;
   cursor: pointer;
+
+  .recorder-icon {
+    width: 64px;
+    height: 64px;
+    background-color: #4DB6AC;
+    border-radius: 50%;
+    display:inline-block;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
 }
 </style>

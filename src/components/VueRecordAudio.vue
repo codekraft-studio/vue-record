@@ -1,13 +1,18 @@
 <template lang="html">
-  <div v-if="isSupported" class="vue-audio-recorder" :class="{
-    'active': isRecording
-  }"
-  @mousedown="startRecording"
-  @mouseleave="stopRecording"
-  @mouseup="stopRecording"
-  @touchstart="startRecording"
-  @touchend="stopRecording"
-  @touchcancel="stopRecording">
+  <div
+    v-if="isSupported"
+    class="vue-audio-recorder"
+    :class="{
+      'active': isRecording,
+      'paused': isPaused
+    }"
+    @mousedown="startRecording"
+    @mouseleave="stopRecording"
+    @mouseup="stopRecording"
+    @touchstart="startRecording"
+    @touchend="stopRecording"
+    @touchcancel="stopRecording"
+  >
     <span></span>
   </div>
 </template>
