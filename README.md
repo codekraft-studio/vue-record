@@ -2,7 +2,7 @@
 
 > custom components for MediaRecorder API
 
-[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![License][license-image]][license-url]
 
 Checkout the [demo](https://codekraft-studio.github.io/vue-record/) to see it in action.
 
@@ -26,13 +26,19 @@ Vue.use(VueRecord)
 Now you have access to the global defined components, here an example:
 
 ```html
-<vue-record-audio />
-<vue-record-video />
+<VueRecordAudio />
+<VueRecordVideo />
 ```
 
 ## Usage
 
 Use the components in your template with different modes and properties to customize the behavior and the recording output.
+
+Both of the provided components can be used as the following pseudo code example:
+
+```html
+<Component :mode="recMode" @stream="onStream" @result="onResult" />
+```
 
 #### Modes
 
@@ -85,7 +91,7 @@ export default {
   methods: {
     onResult (data) {
       console.log('The blob data:', data);
-      console.log('Downloadable audio', window.URL.createObjectURL(data));
+      console.log('Downloadable video', window.URL.createObjectURL(data));
     }
   }
 }
@@ -95,13 +101,14 @@ export default {
 
 ## License
 
-[MIT](./LICENSE) © [codekraft-studio](https://github.com/codekraft-studio)
+Released with [MIT License](./LICENSE) © [codekraft-studio](https://github.com/codekraft-studio)
 
 
 [npm-image]: https://badge.fury.io/js/%40codekraft-studio%2Fvue-record.svg
-
 [npm-url]: https://npmjs.org/package/@codekraft-studio/vue-record
 
 [daviddm-image]: https://david-dm.org/codekraft-studio/vue-record.svg?theme=shields.io
-
 [daviddm-url]: https://david-dm.org/codekraft-studio/vue-record
+
+[license-url]: https://github.com/codekraft-studio/vue-record/blob/master/LICENSE
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
