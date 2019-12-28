@@ -2,14 +2,12 @@
   <div id="app">
     <header class="header">
       <div class="navbar-brand">
-        <img alt="Vue logo" src="./assets/logo.png">
+        <img alt="Vue logo" src="./assets/logo.png" />
       </div>
 
       <div class="navbar-brand-name">
         <h1 class="title">Vue Record</h1>
-        <h2 class="subtitle">
-          components for MediaRecorder API
-        </h2>
+        <h2 class="subtitle">components for MediaRecorder API</h2>
       </div>
     </header>
 
@@ -19,7 +17,10 @@
           <div class="column">
             <div class="has-text-right">
               <h3 class="title is-3">Recording audio files</h3>
-              <p class="subtitle">Simply <strong>{{recordMode.audio}}</strong> the button to record an audio clip</p>
+              <p class="subtitle">
+                Simply
+                <strong>{{recordMode.audio}}</strong> the button to record an audio clip
+              </p>
             </div>
 
             <div class="record-settings">
@@ -38,8 +39,12 @@
           <div class="column">
             <div class="recorded-audio">
               <div v-for="(record, index) in recordings" :key="index" class="recorded-item">
-                <div class="audio-container"><audio :src="record.src" controls /></div>
-                <div><button @click="removeRecord(index)" class="button is-dark">delete</button></div>
+                <div class="audio-container">
+                  <audio :src="record.src" controls />
+                </div>
+                <div>
+                  <button @click="removeRecord(index)" class="button is-dark">delete</button>
+                </div>
               </div>
             </div>
           </div>
@@ -51,7 +56,10 @@
           <div class="column">
             <div class="has-text-right">
               <h3 class="title is-3">Recording video files</h3>
-              <p class="subtitle">Simply <strong>{{recordMode.video}}</strong> the button to record a video clip</p>
+              <p class="subtitle">
+                Simply
+                <strong>{{recordMode.video}}</strong> the button to record a video clip
+              </p>
             </div>
 
             <div class="record-settings">
@@ -79,8 +87,12 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          The source code is licensed <a href="https://github.com/codekraft-studio/vue-record/blob/master/LICENSE">MIT</a>.
-          Made with ♥ by <a href="https://github.com/codekraft-studio">Codekraft Studio</a>.
+          The source code is licensed
+          <a
+            href="https://github.com/codekraft-studio/vue-record/blob/master/LICENSE"
+          >MIT</a>.
+          Made with ♥ by
+          <a href="https://github.com/codekraft-studio">Codekraft Studio</a>.
         </p>
       </div>
     </footer>
@@ -123,18 +135,21 @@ export default {
 </script>
 
 <style lang="scss">
-html, body, #app {
+html,
+body,
+#app {
   width: 100%;
   height: 100%;
 }
 #app {
   display: flex;
   flex-direction: column;
-  main{
+  main {
     height: 100%;
   }
 
-  strong, a {
+  strong,
+  a {
     color: #41b883 !important;
   }
 
@@ -156,7 +171,7 @@ html, body, #app {
   }
 }
 
-.vue-audio-recorder, .vue-video-recorder {
+.vue-record {
   margin-right: 16px;
 }
 
@@ -164,6 +179,7 @@ html, body, #app {
   margin-top: 16px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .recorded-audio {

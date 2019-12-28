@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import VueRecord from './components/index'
+import VueRecord from '../lib'
 
 Vue.config.productionTip = false
 

@@ -5,7 +5,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --target lib --name VueRecord src/components/index.js",
+    "build": "vue-cli-service build --target lib --name VueRecord lib/index.js",
     "build:demo": "vue-cli-service build --dest demo",
     "publish:demo": "git subtree push --prefix demo origin gh-pages",
     "lint": "vue-cli-service lint"
