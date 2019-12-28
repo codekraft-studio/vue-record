@@ -1,25 +1,26 @@
 {
   "name": "@codekraft-studio/vue-record",
   "version": "0.0.2",
-  "main": "dist/VueRecord.umd.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --target lib --name VueRecord lib/index.js",
+    "lint": "vue-cli-service lint",
     "build:demo": "vue-cli-service build --dest demo",
-    "publish:demo": "git subtree push --prefix demo origin gh-pages",
-    "lint": "vue-cli-service lint"
+    "prepublishOnly": "npm run build",
+    "publish:demo": "git subtree push --prefix demo origin gh-pages"
   },
+  "main": "dist/VueRecord.umd.js",
   "files": [
     "dist"
   ],
   "dependencies": {
+    "core-js": "^3.4.4",
     "vue": "^2.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.0",
-    "@vue/cli-plugin-eslint": "^3.12.0",
-    "@vue/cli-service": "^3.12.0",
+    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-eslint": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
