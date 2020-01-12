@@ -55,6 +55,20 @@ The are only two usage modes and can be selected with the __mode__ property:
 By default it's on __hold__ mode, so the recording start when the button is pressed and stops when the button is released.
 But you can change this behaviour using a different mode, the available modes are: `hold` and `press`.
 
+## Customizations
+
+If you want to customize the record button you can use various style related properties.
+
+* __color__: The color used when the button is active
+* __icon-color__: The icon fill color
+* __bg-color__: The container background color
+* __padding:__ The container internal padding
+* __size:__ The button (with container and icon) size
+* __radius:__ The container border radius
+* __rounded:__ A shortcut for setting radius to `50%`
+* __active-class__: The class added when the button is active (when is recording)
+* __paused-class__: The class added when the button is not active (when is paused from recording)
+
 ---
 
 ## Examples
