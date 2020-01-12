@@ -1,12 +1,8 @@
 <template lang="html">
   <div
     v-if="isSupported"
-    v-bind:class="{
-      'vue-record': true,
-      'vue-record-audio': true,
-      'active': isRecording,
-      'paused': isPaused
-    }"
+    class="vue-record vue-record-audio"
+    v-bind:class="classList"
     v-on="{
       'mousedown': startRecording,
       'mouseleave': stopRecording,
