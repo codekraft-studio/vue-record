@@ -24,7 +24,15 @@
             </div>
 
             <div class="record-settings">
-              <vue-record-audio :mode="recordMode.audio" @stream="onStream" @result="onResult" />
+              <vue-record-audio
+                active-class="animated infinite pulse"
+                color="#41b883"
+                :mode="recordMode.audio"
+                @stream="onStream"
+                @result="onResult"
+                rounded
+              />
+
               <div class="field">
                 <label class="label">Mode</label>
                 <div class="select">
@@ -63,7 +71,13 @@
             </div>
 
             <div class="record-settings">
-              <vue-record-video mode="press" @stream="onVideoStream" @result="onVideoResult" />
+              <vue-record-video
+                active-class="animated infinite pulse"
+                color="#41b883"
+                :mode="recordMode.video"
+                @stream="onVideoStream"
+                @result="onVideoResult"
+              />
               <div class="field">
                 <label class="label">Mode</label>
                 <div class="select">
@@ -141,6 +155,7 @@ body,
   width: 100%;
   height: 100%;
 }
+
 #app {
   display: flex;
   flex-direction: column;
