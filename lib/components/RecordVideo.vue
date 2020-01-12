@@ -4,7 +4,7 @@
     v-on="{
       'mousedown': startRecording,
       'mouseleave': stopRecording,
-      'mouseup': startRecording,
+      'mouseup': stopRecording,
       'touchstart': startRecording,
       'touchend': startRecording,
       'touchcancel': startRecording,
