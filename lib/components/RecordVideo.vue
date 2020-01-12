@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import ElementMixin from '../mixins/Element'
+
 const supportedTypes = [
   'video/x-msvideo',
   'video/ogg',
@@ -44,15 +46,10 @@ const supportedTypes = [
   'video/webm'
 ]
 
-import ElementMixin from '../mixins/Element'
-
-// <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-//     <path fill="#000000" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
-// </svg>
-
 export default {
   name: 'VueRecordVideo',
   mixins: [ElementMixin],
+  supportedTypes,
   props: {
     mimeType: {
       type: String,
@@ -77,5 +74,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" src="../index.scss"></style>

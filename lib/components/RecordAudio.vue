@@ -57,5 +57,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" src="../index.scss"></style>
