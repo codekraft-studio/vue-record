@@ -9,7 +9,6 @@
       'mouseup': stopRecording,
       'touchstart': startRecording,
       'touchend': startRecording,
-      'touchcancel': startRecording,
     }"
   >
     <div class="icon-container" :style="backgroundStyle">
