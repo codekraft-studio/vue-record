@@ -78,6 +78,8 @@ export default {
 }
 ```
 
+> We're using [this polyfill](https://github.com/kbumsik/opus-media-recorder) for Safari.
+
 ### Recording Video
 
 It's simple as adding the component and listening for the __result__ event:
@@ -96,6 +98,8 @@ export default {
   }
 }
 ```
+
+> It doesn't work on Safari, we should consider [this polyfill](https://github.com/CameraKit/webm-media-recorder).
 
 ---
 
