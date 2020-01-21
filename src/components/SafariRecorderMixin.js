@@ -3,6 +3,10 @@ import { loadScripts } from "./loadScripts";
 import StartAudioContext from "startaudiocontext";
 import Tone from "tone";
 
+// https://github.com/Tonejs/Tone.js/issues/341
+// https://github.com/tambien/StartAudioContext
+StartAudioContext(Tone.context);
+
 export default {
   methods: {
     async start() {
@@ -40,10 +44,6 @@ export default {
     async getStream() {
       // const stream = await navigator.mediaDevices.getUserMedia(this.constraints)
       // this.$_stream = stream
-
-      // https://github.com/Tonejs/Tone.js/issues/341
-      // https://github.com/tambien/StartAudioContext
-      StartAudioContext(Tone.context);
 
       // you probably DONT want to connect the microphone
       // directly to the master output because of feedback.
