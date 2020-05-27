@@ -1,6 +1,11 @@
 {
   "name": "@codekraft-studio/vue-record",
   "version": "0.0.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codekraft-studio/vue-record.git"
+  },
   "main": "dist/VueRecord.umd.js",
   "scripts": {
     "prepublishOnly": "npm run build",
