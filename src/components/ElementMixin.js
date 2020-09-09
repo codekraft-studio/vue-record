@@ -8,6 +8,7 @@ if (!window.MediaRecorder) {
   mixins.push(SafariRecorderMixin)
 }
 
+
 /**
  * The element mixin defines the mode behaviour and creates two
  * functions to start and stop the recording execution
