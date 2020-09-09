@@ -13,7 +13,7 @@ export default {
 			}
 
 			window.MediaRecorder = MediaRecorder;
-			const CustomMediaRecorder = window.MediaRecorder || MediaRecorder;
+			const CustomMediaRecorder = window.MediaRecorder;
 
 			this.$_mediaRecorder = new CustomMediaRecorder(this.$_stream, {
 				mimeType: 'audio/wav', // browser dependent
