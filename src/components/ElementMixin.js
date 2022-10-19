@@ -1,14 +1,12 @@
 import RecorderMixin from './RecorderMixin'
 import SafariRecorderMixin from './SafariRecorderMixin'
 
-const mixins = [];
+const mixins = [RecorderMixin];
 
 if (window.safari) {
   console.warn('Using Safari polyfill');
   mixins.push(SafariRecorderMixin)
-} else {
-  mixins.push(RecorderMixin)
-}
+} 
 
 /**
  * The element mixin defines the mode behaviour and creates two

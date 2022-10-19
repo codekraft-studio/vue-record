@@ -205,21 +205,4 @@ export default {
       );
     }
   },
-  mounted () {
-    if (!navigator.mediaDevices && !navigator.mediaDevices.getUserMedia) {
-      // eslint-disable-next-line
-      console.warn('Media Devices are not supported from your browser.')
-      return
-    }
-
-    // video recorder on Safari is not currently supported
-    // TODO: we could use https://github.com/CameraKit/webm-media-recorder
-    if (!window.MediaRecorder && this.constraints.video) {
-      // eslint-disable-next-line
-      console.warn('MediaRecorder for video is not supported from your browser.')
-      return
-    }
-
-    this.isSupported = true
-  }
 };

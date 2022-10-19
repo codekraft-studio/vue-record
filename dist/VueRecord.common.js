@@ -3934,12 +3934,10 @@ StartAudioContext_default()(Tone_default.a.context);
 
 
 
-var mixins = [];
+var mixins = [RecorderMixin];
 if (window.safari) {
   console.warn('Using Safari polyfill');
   mixins.push(SafariRecorderMixin);
-} else {
-  mixins.push(RecorderMixin);
 }
 
 /**
