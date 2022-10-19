@@ -2,8 +2,10 @@ import RecorderMixin from './RecorderMixin'
 import SafariRecorderMixin from './SafariRecorderMixin'
 
 const mixins = [RecorderMixin];
-
-if (window.safari) {
+function isSafari() {
+  return (navigator.vendor.match(/apple/i) || "").length > 0
+}
+if (isSafari()) {
   console.warn('Using Safari polyfill');
   mixins.push(SafariRecorderMixin)
 } 
