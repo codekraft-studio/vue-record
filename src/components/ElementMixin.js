@@ -1,11 +1,13 @@
 import RecorderMixin from './RecorderMixin'
 import SafariRecorderMixin from './SafariRecorderMixin'
 
-const mixins = [RecorderMixin];
+const mixins = [];
 
-if (!window.MediaRecorder) {
+if (!window.safari) {
   console.warn('Using Safari polyfill');
   mixins.push(SafariRecorderMixin)
+} else {
+  mixins.push(RecorderMixin)
 }
 
 /**
