@@ -3,7 +3,7 @@ import SafariRecorderMixin from './SafariRecorderMixin'
 
 const mixins = [];
 
-if (!window.safari) {
+if (window.safari) {
   console.warn('Using Safari polyfill');
   mixins.push(SafariRecorderMixin)
 } else {

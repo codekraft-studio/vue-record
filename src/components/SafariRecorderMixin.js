@@ -16,11 +16,15 @@ export default {
 
       try {
         this.$_stream = await this.getStream();
+        console.log("preparing recorder...");
         await this.prepareRecorder();
 
+        console.log("media recorder start...");
         this.$_mediaRecorder.start();
+        console.log("ton transport start...")
         Tone.Transport.start();
       } catch (e) {
+        console.log("record start error")
         this.$emit("error", e);
         // eslint-disable-next-line
         console.error(e);
